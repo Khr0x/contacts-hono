@@ -29,6 +29,11 @@ app.get('/', (c) => {
   return c.text('Hello Hono by Cristian Mendez!')
 });
 
+app.get('/health', (c) => {
+  return c.json({ status: 'Healthy check is OK' });
+});
+
+
 app.use(
 	"/api/auth/*",
 	cors({
