@@ -5,11 +5,5 @@
       "src": "api/[...path].ts",
       "use": "@vercel/node"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/api/[...path].ts"
-    }
   ]
 }
