@@ -3,7 +3,6 @@ import { Hono } from 'hono'
 import { cors } from 'hono/cors';
 import { auth } from '../src/lib/auth';
 import { router as contactRouter } from '../src/modules/contacts/contact.router';
-import { handle } from 'hono/vercel';
 
 const app = new Hono<{
 	Variables: {
@@ -60,4 +59,4 @@ export const config = {
   },
 };
 
-export default handle(app);
+export default app;
