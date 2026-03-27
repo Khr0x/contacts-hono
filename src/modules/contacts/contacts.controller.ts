@@ -30,11 +30,37 @@ export class ContactsController {
     return c.json(result, 201);
   }
 
-//   async delete(c: Context) {
-//     const tx = c.get("tx") as DbTransaction;
-//     const { id } = c.req.param();
+  async update(c: Context) {
+    const tx = c.get("tx");
+    const { id } = c.req.param();
+    const body = await c.req.json();
+
+    if(!tx) {
+      return c.json({ error: 'Database transaction not found' }, 500);
+    }
+
+    if(!id) {
+      return c.json({ error: 'Contact ID is required' }, 400);
+    }
     
-//     await this.service.deleteContact(tx, id);
-//     return c.json({ success: true }, 200);
-//   }
+    const result = await this.service.updateContact(id, body, tx);
+    return c.json(result);
+  }
+
+  async delete(c: Context) {
+    const tx = c.get("tx");
+    const { id } = c.req.param();
+
+    if(!tx) {
+      return c.json({ error: 'Database transaction not found' }, 500);
+    }
+
+    if(!id) {
+      return c.json({ error: 'Contact ID is required' }, 400);
+    }
+    
+    await this.service.deleteContact(id, tx);
+    return c.json({ message: 'Contact deleted successfully' });
+
+  }
 }

@@ -14,6 +14,8 @@ router.get("/", async (c) =>  controller.getAll(c));
 
 router.post("/", async (c) => controller.create(c));
 
-// router.put("/:id", async (c) => controller.update(c));
+router.put("/:id", async (c) => controller.update(c));
+
+router.delete("/:id", async (c) => controller.delete(c));
 
 export { router };

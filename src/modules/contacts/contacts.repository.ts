@@ -18,7 +18,6 @@ export class ContactsRepository implements IContactsRepository {
   }
 
   async create(data: Partial<Contact>, tx: any): Promise<Contact> {
-    console.log('Creating contact with data:', data);
     return await tx.insert(contact).values(data).returning();
   }
 

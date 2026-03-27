@@ -30,7 +30,4 @@ export class ContactsService implements IContactsService {
         await this.contactsRepository.delete(contactId, tx);
     }
 
-
-
-
 }

@@ -14,6 +14,29 @@ Se utiliza **Better Auth** con el plugin de **Organization** para gestionar aute
 
 ## Formas de uso
 
+### Clonar el repositorio
+
+```sh
+git clone https://github.com/Khr0x/contacts-hono.git
+cd contacts-hono
+```
+
+### Requisitos previos
+
+#### Instalar Bun
+
+Si no tienes Bun instalado, ejecuta:
+
+```sh
+curl -fsSL https://bun.sh/install | bash
+```
+
+O usando Homebrew (macOS):
+
+```sh
+brew install bun
+```
+
 ### 1. Local con Bun
 
 ```sh

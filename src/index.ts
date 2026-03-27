@@ -35,11 +35,11 @@ app.get('/health', (c) => {
 
 
 app.use(
-	"/api/*",
+	"*",
 	cors({
 		origin: "*",
 		allowHeaders: ["Content-Type", "Authorization"],
-		allowMethods: ["POST", "GET", "OPTIONS"],
+		allowMethods: ["POST", "GET", "PUT", "DELETE", "OPTIONS"],
 		exposeHeaders: ["Content-Length"],
 		maxAge: 600,
 		credentials: true,
