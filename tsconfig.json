@@ -28,6 +28,8 @@
     "noPropertyAccessFromIndexSignature": false,
 
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
-  }
+    "experimentalDecorators": true,
+    "types": ["bun"]
+  },
+  "exclude": ["node_modules"]
 }
