@@ -11,4 +11,8 @@ export class CreateContactDto {
   @IsOptional()
   @IsPhoneNumber('MX', { message: 'El número de teléfono no es válido' })
   phone?: string;
+
+  @IsString({ message: 'El ID del inquilino debe ser una cadena de texto' })
+  @IsNotEmpty({ message: 'El ID del inquilino es obligatorio' })
+  tenant_id!: string;
 }

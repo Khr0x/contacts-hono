@@ -2,8 +2,8 @@ import type { Contact } from "../schema/contact.schema";
 
 export interface IContactsRepository {
   findAll(tx: any): Promise<Contact[]>;
-  findById(tx: any, id: string): Promise<Contact | null>;
-  update(tx: any, id: string, data: Partial<Contact>): Promise<Contact>;
-  create(tx: any, data: Partial<Contact>): Promise<Contact>;
-  delete(tx: any, id: string): Promise<void>;
+  findById(id: string, tx: any): Promise<Contact | null>;
+  update(id: string, data: Partial<Contact>, tx: any): Promise<Contact>;
+  create(data: Partial<Contact>, tx: any): Promise<Contact>;
+  delete(id: string, tx: any): Promise<void>;
 }

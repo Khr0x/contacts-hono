@@ -35,7 +35,7 @@ app.get('/health', (c) => {
 
 
 app.use(
-	"/api/auth/*",
+	"/api/*",
 	cors({
 		origin: "*",
 		allowHeaders: ["Content-Type", "Authorization"],

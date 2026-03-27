@@ -19,13 +19,15 @@ export class ContactsService implements IContactsService {
         return contacts.map(contact => ContactMapper.toDto(contact));
     }
     async createContact(contactData: CreateContactDto, tx: any): Promise<ContactDto> {
-        throw new Error("Method not implemented.");
+        const newContact = await this.contactsRepository.create(contactData, tx);
+        return ContactMapper.toDto(newContact);
     }
     async updateContact(contactId: string, contactData: Partial<CreateContactDto>, tx: any): Promise<ContactDto> {
-        throw new Error("Method not implemented.");
+        const updatedContact = await this.contactsRepository.update(contactId, contactData, tx);
+        return ContactMapper.toDto(updatedContact);
     }
     async deleteContact(contactId: string, tx: any): Promise<void> {
-        throw new Error("Method not implemented.");
+        await this.contactsRepository.delete(contactId, tx);
     }
 
 

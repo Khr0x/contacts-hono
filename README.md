@@ -1,18 +1,58 @@
 # contacts-hono
 Backend for contacts app using hono
 
+## Autenticación
 
-To install dependencies:
+Se utiliza **Better Auth** con el plugin de **Organization** para gestionar autenticación y organizaciones multi-tenant.
+
+### Características de autenticación:
+- **Better Auth**: Framework de autenticación
+- **Organization Plugin**: Soporte para organizaciones/multi-tenant
+- **RLS (Row Level Security)**: Seguridad a nivel de fila en la base de datos
+- **Middleware de Tenant**: Middleware para obtener el tenant actual de la solicitud
+- **NOBYPASS_RLS**: Las políticas RLS no pueden ser saltadas (protección a nivel de base de datos)
+
+## Formas de uso
+
+### 1. Local con Bun
+
 ```sh
+# Copiar variables de entorno
+cp .env.example .env
+
+# Instalar dependencias
 bun install
-```
 
-To run:
-```sh
+# Ejecutar en desarrollo
 bun run dev
 ```
 
+### 2. Docker Compose - Perfil Local
+
+```sh
+# Copiar variables de entorno
+cp .env.example .env
+
+# Ejecutar con perfil local (desarrollo)
+docker compose --profile local up -d
+```
+
+### 3. Docker Compose - Perfil Staging
+
+```sh
+# Copiar variables de entorno
+cp .env.example .env
+
+# Ejecutar con perfil staging
+docker compose --profile staging up -d
+```
+
+### Otros comandos
+
+```sh
+bun run dev       # Desarrollo local
 open http://localhost:3000
+```
 
 ## Database Migrations
 

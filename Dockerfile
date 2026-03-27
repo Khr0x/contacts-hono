@@ -2,6 +2,9 @@ FROM oven/bun:1-debian
 
 WORKDIR /app
 
+# Install netcat for health checks
+RUN apt-get update && apt-get install -y netcat-openbsd && rm -rf /var/lib/apt/lists/*
+
 COPY package.json ./
 RUN bun install --frozen-lockfile --include-dev
 
