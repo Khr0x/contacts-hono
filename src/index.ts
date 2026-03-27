@@ -26,7 +26,7 @@ app.use("*", async (c, next) => {
 
 
 app.get('/', (c) => {
-  return c.text('Hello Hono!')
+  return c.text('Hello Hono by Cristian Mendez!')
 });
 
 app.use(
