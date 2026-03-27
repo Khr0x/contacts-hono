@@ -10,6 +10,7 @@ services:
     environment:
       - DATABASE_URL=${DATABASE_URL:-postgres://postgres:postgres@db:5432/contacts}
       - NODE_ENV=${NODE_ENV:-development}
+      - ENV_TARGET=${ENV_TARGET:-local}
     depends_on:
       db:
         condition: service_healthy
